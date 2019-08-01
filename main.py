@@ -1,4 +1,8 @@
 def main():
+    """
+        Ce programme teste une année donnée par un utilisateur
+        et indique si celle-ci est bissextile ou non
+    """
     
     # Asking user for a year
     year = input("Give me a year: ")
