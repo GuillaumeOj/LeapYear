@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 def main():
     """
         Ce programme teste une année donnée par un utilisateur
