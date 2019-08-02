@@ -1,18 +1,29 @@
 # -*- coding: utf-8 -*-
+"""
+Author: GuillaumeOj
+
+Context: OpenClassrooms course
+https://openclassrooms.com/fr/courses/235344-apprenez-a-programmer-en-python
+
+Version: 2019.07
+
+This programm tell user if a year is a leap year
+"""
 
 def main():
     """
-        Ce programme teste une année donnée par un utilisateur
-        et indique si celle-ci est bissextile ou non
+    Main function for interact with the user
     """
+
     year_confirmation = False
 
-    while year_confirmation == False:
+    while year_confirmation is not True:
         try:
             # Asking user for a year
             year = input("Give me a year: ")
             year = int(year)
 
+            # This programm don't work for negative years
             assert year >= 0
         except ValueError:
             print("Please give me a correct year !")
@@ -22,16 +33,13 @@ def main():
             year_confirmation = True
             testing_year(year)
 
-    
 def testing_year(year):
+    """
+    Function for testing if a year is a leap year
+    """
+
     # Testing if the 'year' is a leap year
     if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
-        leap = True
-    else:
-        leap = False
-
-    # Testing 'leap' to create a message
-    if leap:
         message = "is a leap year."
     else:
         message = "is not a leap year."
