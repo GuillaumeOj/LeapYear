@@ -12,12 +12,18 @@ def main():
             # Asking user for a year
             year = input("Give me a year: ")
             year = int(year)
-        except:
-            print("Please give me a correct year !")
-            continue
-        
-        year_confirmation = True
 
+            assert year >= 0
+        except ValueError:
+            print("Please give me a correct year !")
+        except AssertionError:
+            print("Please give me a year greater than or equal to zero.")
+        else:
+            year_confirmation = True
+            testing_year(year)
+
+    
+def testing_year(year):
     # Testing if the 'year' is a leap year
     if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
         leap = True
